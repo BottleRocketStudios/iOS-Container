@@ -17,7 +17,7 @@ class DefaultContainerTransitionAnimator: NSObject, UIViewControllerAnimatedTran
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let destinationController = transitionContext.viewController(forKey: .to), let destination = destinationController.view else {
-            fatalError("The context is improperly configured - requires both a source and destination.")
+            preconditionFailure("The context is improperly configured - a destination view controller must be provided.")
         }
         
         transitionContext.containerView.addSubview(destination)
