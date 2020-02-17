@@ -28,6 +28,5 @@ extension ContainerViewController {
                 return childManager.removeAll(where: { $0 != visibleChild && !identifiers.contains($0.identifier) })
             }
         }
-
     }
 }
