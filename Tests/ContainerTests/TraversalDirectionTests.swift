@@ -50,23 +50,23 @@ final class TraversalDirectionTests: XCTestCase {
         let childB = direction.nextChild(in: children, from: children[2])
         XCTAssertEqual(childB, children[1])
         
-        let childC = direction.nextChild(in: children, from: children[1])
-        XCTAssertEqual(childC, children[0])
+        let childA = direction.nextChild(in: children, from: children[1])
+        XCTAssertEqual(childA, children[0])
     }
     
     func testChildTraversal_returnsNilWhenTraversingBackwardPastArrayStart() {
         let direction: ContainerViewController.ChildManager.TraversalDirection = .preceeding
         let children: [ContainerViewController.Child] = [.init(identifier: "a", viewController: UIViewController())]
-        let childB = direction.nextChild(in: children, from: children[0])
+        let previousChild = direction.nextChild(in: children, from: children[0])
         
-        XCTAssertNil(childB)
+        XCTAssertNil(previousChild)
     }
     
     func testChildTraversal_returnsNilWhenTraversingBackwardFromObjectNotInArray() {
         let direction: ContainerViewController.ChildManager.TraversalDirection = .preceeding
         let children: [ContainerViewController.Child] = [.init(identifier: "a", viewController: UIViewController())]
-        let childB = direction.nextChild(in: children, from: .init(identifier: "b", viewController: UIViewController()))
+        let previousChild = direction.nextChild(in: children, from: .init(identifier: "b", viewController: UIViewController()))
         
-        XCTAssertNil(childB)
+        XCTAssertNil(previousChild)
     }
 }

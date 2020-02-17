@@ -11,15 +11,18 @@ import XCTest
 final class InsertionBehaviorTests: XCTestCase {
     
     func testInsertionBehavior_testCustomInsertionBehavior() {
+        let exp = expectation(description: "custom insertion behavior")
         let behavior = ContainerViewController.ChildManager.InsertionBehavior.custom { into, new in
-            return [new] + into
+            exp.fulfill()
+            return into + [new]
         }
         
         let children: [ContainerViewController.Child] = [.init(identifier: "a", viewController: UIViewController())]
         let new: ContainerViewController.Child = .init(identifier: "b", viewController: UIViewController())
         let inserted = behavior.inserting(new: new, into: children)
         
-        XCTAssertEqual(inserted, [new] + children)
+        XCTAssertEqual(inserted, children + [new])
+        waitForExpectations(timeout: 1, handler: nil)
     }
     
     func testInsertionBehavior_testDefaultInsertionBehavior() {
