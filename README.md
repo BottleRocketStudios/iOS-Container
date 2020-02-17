@@ -4,7 +4,7 @@
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/bottlerocketstudios/Container)
 [![License](https://img.shields.io/github/license/bottlerocketstudios/Container)](LICENSE)
 
-The `ContainerViewController` is designed to be a simple but flexible method to embed and transition between multiple child `UIViewController` objects. It was built to fill in the gap when you need a `UINavigationController` without the hassle of a navigation bar, or a `UITabBarController` without the tab bar. The only built in way to transition between children of the container is through it's `transition(to:)` API.
+The `ContainerViewController` is designed to be a simple but flexible method to embed and transition between multiple child `UIViewController` objects. It was built to fill in the gap when you need a `UINavigationController` without the hassle of a navigation bar, or a `UITabBarController` without the tab bar. The only built in way to transition between children of the container is through its `transition(to:)` API.
 
 To get started quickly, it is easiest to create the `ContainerViewController` from code and manually add it as a child of a parent `UIViewController`. This is easily done in that view controller's `viewDidLoad` function:
 
@@ -32,7 +32,7 @@ extension ContainerViewController.Child.Identifier {
 
 Although this is is encouraged, `ContainerViewController.Child.Identifier` conforms to `ExpressibleByStringLiteral` and `RawRepresentable` so these identifiers can be initialized from any `String` at run time.
 
-Once you have the `ContainerViewController` properly initialized and visible, it will (by default) automatically transition to its first `Child`. This behavior is controlled by the `shouldAutomaticallyTransitionOnLoad`, where, when set to `true`, the container will select the first of it's `Child` objects when it's view loads. If this value is set to false, or the `ContainerViewController` has no `Child` objects at load time, it will wait for further instruction before embedding and showing a `Child`.
+Once you have the `ContainerViewController` properly initialized and visible, it will (by default) automatically transition to its first `Child`. This behavior is controlled by the `shouldAutomaticallyTransitionOnLoad`, where, when set to `true`, the container will select the first of its `Child` objects when its view loads. If this value is set to false, or the `ContainerViewController` has no `Child` objects at load time, it will wait for further instruction before embedding and showing a `Child`.
 
 In order to begin showing a child view controller, there are a few options:
 
@@ -89,11 +89,6 @@ github "BottleRocketStudios/Container" ~> 0.1
 ```
 
 Then run `carthage update` to build the framework and drag the built `Container`.framework into your Xcode project.
-
-
-## Author
-
-Will McGinty
 
 
 ## License
