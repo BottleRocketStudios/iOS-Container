@@ -31,7 +31,6 @@ class BaseContainerViewController: UIViewController {
     private var animationController = WipeTransitionAnimator(direction: .leftToRight)
     private var logLifecycleEvents = true
     private var useCustomAnimator = true
-
  
     // MARK: Lifecycle
     override func viewDidLoad() {

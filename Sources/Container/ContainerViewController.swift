@@ -11,8 +11,8 @@ open class ContainerViewController: UIViewController {
     
     //MARK: Properties
     public let childManager = ChildManager(children: [])
-    
     open private(set) var isTransitioning: Bool = false
+
     open var shouldAutomaticallyTransitionOnLoad: Bool = true
     open var postTransitionBehavior: PostTransitionBehavior = .none
     open var insertionBehavior: ChildManager.InsertionBehavior {
@@ -37,7 +37,7 @@ open class ContainerViewController: UIViewController {
         self.childManager.children = children
         self.delegate = delegate
     }
-    
+
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -133,7 +133,7 @@ private extension ContainerViewController {
     }
     
     func configure(destination: Child, inContainer container: UIView) {
-        //It is the animator's responsibility (as with all UIViewControllerAnimatedTransitioning objects) to add the destinationView as a subview of the container view. The container will simply ensure the proper layout is used once the transition is completed.
+        //It is the animator's responsibility (as with all `UIViewControllerAnimatedTransitioning` objects) to add the destinationView as a subview of the container view. The container will simply ensure the proper layout is used once the transition is completed.
         
         container.addSubview(destination.viewController.view)
         destination.viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
