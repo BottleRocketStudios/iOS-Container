@@ -8,7 +8,6 @@
 import UIKit
 import Container
 
-
 /// The `WipeTransitionAnimator` enables the transition from one `UIViewController` object to another by pushing the source off the screen revealing the destination. The transition supports wiping from both right to left and left to right and is powered by a `UIViewImplicitlyAnimating` object, allowing for interactivity.
 class WipeTransitionAnimator: NSObject {
     
@@ -17,12 +16,12 @@ class WipeTransitionAnimator: NSObject {
         case rightToLeft
     }
     
-    //MARK: Properties
+    // MARK: Properties
     var transitionDirection: Direction
     private var interruptibleAnimator: UIViewPropertyAnimator?
     private let duration = 0.3
     
-    //MARK: Initializers
+    // MARK: Initializers
     init(direction: Direction) {
         self.transitionDirection = direction
         super.init()
@@ -38,7 +37,7 @@ class WipeTransitionAnimator: NSObject {
     }
 }
 
-//MARK: UIViewControllerAnimatedTransitioning
+// MARK: UIViewControllerAnimatedTransitioning
 extension WipeTransitionAnimator: UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {

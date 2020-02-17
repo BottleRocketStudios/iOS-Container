@@ -94,7 +94,7 @@ private extension BaseContainerViewController {
     }
 }
 
-//MARK: ContainerViewControllerDelegate
+// MARK: ContainerViewControllerDelegate
 extension BaseContainerViewController: ContainerViewControllerDelegate {
 
     func containerViewController(_ container: ContainerViewController, didBeginTransitioningFrom source: ContainerViewController.Child, to destination: ContainerViewController.Child) {

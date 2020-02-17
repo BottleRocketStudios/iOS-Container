@@ -9,7 +9,7 @@ import UIKit
 
 open class ContainerViewController: UIViewController {
     
-    //MARK: Properties
+    // MARK: Properties
     public let childManager = ChildManager(children: [])
     open private(set) var isTransitioning: Bool = false
 
@@ -31,7 +31,7 @@ open class ContainerViewController: UIViewController {
     private var containerTransitionContext: UIViewControllerContextTransitioning?
     open var containerTransitionCoordinator: ContainerViewControllerTransitionCoordinator?
     
-    //MARK: Initializers
+    // MARK: Initializers
     public convenience init(children: [Child], delegate: ContainerViewControllerDelegate? = nil) {
         self.init(nibName: nil, bundle: nil)
         self.childManager.children = children
@@ -46,7 +46,7 @@ open class ContainerViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
-    //MARK: Lifecycle
+    // MARK: Lifecycle
     open override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,7 +69,7 @@ open class ContainerViewController: UIViewController {
     }
 }
 
-//MARK: Transitioning
+// MARK: Transitioning
 private extension ContainerViewController {
     
     func performTransition(to destination: Child, completion: ((Bool) -> Void)? = nil) {
@@ -104,7 +104,7 @@ private extension ContainerViewController {
     }
 }
 
-//MARK: Helper
+// MARK: Helper
 private extension ContainerViewController {
     
     func configuredTransitionContext(from source: Child, to destination: Child, completion: ((Bool) -> Void)?) -> ContainerTransitionContext {
