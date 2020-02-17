@@ -30,7 +30,7 @@ open class ContainerPercentDrivenInteractiveTransitioner: NSObject, ContainerVie
         transitionAnimator = animator
         
         guard let animator = animator.interruptibleAnimator?(using: context) else {
-            return debugPrint("In order to fully use the \(ContainerPercentDrivenInteractiveTransitioner.self), the animator must provide an object conforming to \(UIViewImplicitlyAnimating.self).")
+            preconditionFailure("In order to fully use the \(ContainerPercentDrivenInteractiveTransitioner.self), the animator must provide an object conforming to \(UIViewImplicitlyAnimating.self).")
         }
     
         interruptibleAnimator = animator

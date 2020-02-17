@@ -39,13 +39,13 @@ class ContainerTransitionContext: NSObject {
 // MARK: UIViewControllerContextTransitioning
 extension ContainerTransitionContext: UIViewControllerContextTransitioning {
     
-    /// The frame's are set to .null when they are not known or otherwise undefined.  For example the finalFrame of the fromViewController will be .null if and only if the fromView will be removed from the window at the end of the transition. On the other hand, if the finalFrame is not .null then it must be respected at the end of the transition.
+    /// The frames are set to .null when they are not known or otherwise undefined.  For example the finalFrame of the fromViewController will be .null if and only if the fromView will be removed from the window at the end of the transition. On the other hand, if the finalFrame is not .null then it must be respected at the end of the transition.
     func initialFrame(for vc: UIViewController) -> CGRect {
         guard vc == viewController(forKey: .from) else { return .null }
         return containerView.bounds
     }
 
-    /// The frame's are set to .null when they are not known or otherwise undefined.  For example the finalFrame of the fromViewController will be .null if and only if the fromView will be removed from the window at the end of the transition. On the other hand, if the finalFrame is not .null then it must be respected at the end of the transition.
+    /// The frames are set to .null when they are not known or otherwise undefined.  For example the finalFrame of the fromViewController will be .null if and only if the fromView will be removed from the window at the end of the transition. On the other hand, if the finalFrame is not .null then it must be respected at the end of the transition.
     func finalFrame(for vc: UIViewController) -> CGRect {
         guard vc == viewController(forKey: .to) else { return .null }
         return containerView.bounds
