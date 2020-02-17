@@ -91,6 +91,19 @@ github "BottleRocketStudios/Container" ~> 0.1
 Then run `carthage update` to build the framework and drag the built `Container`.framework into your Xcode project.
 
 
+## Author
+
+[Bottle Rocket Studios](https://www.bottlerocketstudios.com/)
+
+
 ## License
 
-Container is available under the MIT license. See [the LICENSE file](LICENSE) for more information.
+Container is available under the Apache 2.0 license. See [the LICENSE file](LICENSE) for more information.
+
+
+## Contributing
+
+See the [CONTRIBUTING] document. Thank you, [contributors]!
+
+[CONTRIBUTING]: CONTRIBUTING.md
+[contributors]: https://github.com/BottleRocketStudios/iOS-KeyboardSupport/graphs/contributors
