@@ -47,17 +47,14 @@ class HorizontalPanGestureInteractiveTransition: ContainerPercentDrivenInteracti
         case .began: gestureRecognizedBlock(recognizer)
         case .changed:
             guard transitionContext != nil else {
-                /*If the transition context doesn't exist, we haven't been given it - we aren't using a compatible animator. The container will only ask for an interaction controller and configure it if you provide it with a custom animator. */
+                /*If the transition context doesn't exist, we haven't been given it - we aren't using a compatible animator.
+                 The container will only ask for an interaction controller and configure it if you provide it with a custom animator. */
                 return
             }
 
             let translation = gestureRecognizer.translation(in: gestureRecognizer.view)
             lastVelocity = gestureRecognizer.velocity(in: gestureRecognizer.view)
-            
-            if (isLeftToRight && lastVelocity.x < 0) || (!isLeftToRight && lastVelocity.x > 0) {
-                lastVelocity = .zero
-            }
-            
+
             //If we are back to the starting point, cancel the interaction and transition
             if (isLeftToRight && translation.x < 0) || (!isLeftToRight && translation.x > 0) {
                 shouldCompleteTransition = false

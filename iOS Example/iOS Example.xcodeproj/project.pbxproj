@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EA172FF23FB5E2C000CA22F /* LifecycleLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA172FE23FB5E2C000CA22F /* LifecycleLogging.swift */; };
 		B4E0252123F4E7BF005AF9FE /* InteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0251B23F4E7BF005AF9FE /* InteractiveTransition.swift */; };
 		B4E0252223F4E7BF005AF9FE /* ViewControllerB.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0251C23F4E7BF005AF9FE /* ViewControllerB.swift */; };
 		B4E0252323F4E7BF005AF9FE /* ContainerExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0251D23F4E7BF005AF9FE /* ContainerExampleViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EA172FE23FB5E2C000CA22F /* LifecycleLogging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifecycleLogging.swift; sourceTree = "<group>"; };
 		B4E0251B23F4E7BF005AF9FE /* InteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveTransition.swift; sourceTree = "<group>"; };
 		B4E0251C23F4E7BF005AF9FE /* ViewControllerB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerB.swift; sourceTree = "<group>"; };
 		B4E0251D23F4E7BF005AF9FE /* ContainerExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerExampleViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 		B4E0252723F4E806005AF9FE /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0EA172FE23FB5E2C000CA22F /* LifecycleLogging.swift */,
 				B4E0251D23F4E7BF005AF9FE /* ContainerExampleViewController.swift */,
 				B4E0252023F4E7BF005AF9FE /* ViewControllerA.swift */,
 				B4E0251C23F4E7BF005AF9FE /* ViewControllerB.swift */,
@@ -195,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EA172FF23FB5E2C000CA22F /* LifecycleLogging.swift in Sources */,
 				D9A12776235699C600D136A5 /* AppDelegate.swift in Sources */,
 				B4E0252523F4E7BF005AF9FE /* WipeTransitionAnimator.swift in Sources */,
 				B4E0252223F4E7BF005AF9FE /* ViewControllerB.swift in Sources */,

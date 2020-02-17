@@ -150,7 +150,6 @@ private extension ContainerViewController {
         if completed {
             finishTransitioningOut(for: source?.viewController)
             visibleChild = destination
-            
         } else {
             finishTransitioningOut(for: destination.viewController)
             visibleChild = source

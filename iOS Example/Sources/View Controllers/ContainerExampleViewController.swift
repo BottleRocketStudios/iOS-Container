@@ -14,7 +14,7 @@ extension ContainerViewController.Child.Identifier {
     static let b = ContainerViewController.Child.Identifier(rawValue: "B")
 }
 
-class BaseContainerViewController: UIViewController {
+class BaseContainerViewController: UIViewController, LifecycleLogging {
     
     // MARK: Outlets
     @IBOutlet private var containerView: UIView!
@@ -27,16 +27,16 @@ class BaseContainerViewController: UIViewController {
     private lazy var containerViewController: ContainerViewController = ContainerViewController(children: [.init(identifier: .a, viewController: controllerA),
                                                                                                            .init(identifier: .b, viewController: controllerB)], delegate: self)
 
+    var shouldLogLifecycleEvents: Bool = true
+    private var useCustomAnimator = true
     private var interactionController: HorizontalPanGestureInteractiveTransition?
     private var animationController = WipeTransitionAnimator(direction: .leftToRight)
-    private var logLifecycleEvents = true
-    private var useCustomAnimator = true
+
  
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+
         //Configure the the container view controller in self
         containerViewController.willMove(toParent: self)
         addChild(containerViewController)
@@ -55,24 +55,27 @@ class BaseContainerViewController: UIViewController {
             }
         }
     }
-    
-    // MARK: Interface Actions
+}
+
+// MARK: Interface Actions
+private extension BaseContainerViewController {
+
     @IBAction func transitionToA() {
         interactionController?.wantsInteractiveStart = false
         containerViewController.transitionToChild(for: .a)
     }
-    
+
     @IBAction func transitionToB() {
         interactionController?.wantsInteractiveStart = false
         containerViewController.transitionToChild(for: .b)
     }
-    
+
     @IBAction func logSwitchDidChange(_ sender: UISwitch) {
-        controllerA.logLifecycleEvents = sender.isOn
-        controllerB.logLifecycleEvents = sender.isOn
-        logLifecycleEvents = sender.isOn
+        controllerA.shouldLogLifecycleEvents = sender.isOn
+        controllerB.shouldLogLifecycleEvents = sender.isOn
+        shouldLogLifecycleEvents = sender.isOn
     }
-    
+
     @IBAction func useCustomAnimatorSwitchDidChange(_ sender: UISwitch) {
         useCustomAnimator = sender.isOn
     }
@@ -106,16 +109,12 @@ extension BaseContainerViewController: ContainerViewControllerDelegate {
         container.containerTransitionCoordinator?.notifyWhenInteractionEnds { [weak self] context in
             self?.interactionController?.wantsInteractiveStart = true
         }
-        
-        if logLifecycleEvents {
-            debugPrint("Did Begin Transitioning from: \(source) to: \(destination)")
-        }
+
+        logEvent("Did Begin Transitioning from: \(source) to: \(destination)")
     }
     
     func containerViewController(_ container: ContainerViewController, didFinishTransitioningFrom source: ContainerViewController.Child, to destination: ContainerViewController.Child) {
-        if logLifecycleEvents {
-            debugPrint("Did End Transitioning from: \(source) to: \(destination)")
-        }
+        logEvent("Did End Transitioning from: \(source) to: \(destination)")
     }
     
     func containerViewController(_ container: ContainerViewController, shouldTransitionFrom source: ContainerViewController.Child, to destination: ContainerViewController.Child) -> Bool {

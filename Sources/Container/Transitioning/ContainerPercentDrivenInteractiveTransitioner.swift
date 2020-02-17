@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// The `ContainerPercentDrivenInteractiveTransitioner` is a concrete implementation of `ContainerViewControllerInteractiveTransitioning` and be used to drive any animated transition that utilizes a `UIViewPropertyAnimator` through a gesture. This object is connected to an animator by passing an instance of this object to the `ContainerViewControllerDelegate`.
 open class ContainerPercentDrivenInteractiveTransitioner: NSObject, ContainerViewControllerInteractiveTransitioning {
 
     // MARK: Properties

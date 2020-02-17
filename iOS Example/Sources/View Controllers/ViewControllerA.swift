@@ -8,34 +8,15 @@
 import UIKit
 import Container
 
-class ViewControllerA: UIViewController {
+class ViewControllerA: UIViewController, LifecycleLogging {
     
-    var logLifecycleEvents: Bool = true
+    var shouldLogLifecycleEvents: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        configureSubviews()
         logEvent("View A Did Load")
-        
-        let newView = UILabel(frame: .zero)
-        newView.text = "A"
-        newView.textAlignment = .center
-        newView.font = UIFont.systemFont(ofSize: 100)
-        newView.translatesAutoresizingMaskIntoConstraints = false
-        newView.backgroundColor = .yellow
-        
-        view.addSubview(newView)
-        if #available(iOS 11, *) {
-            NSLayoutConstraint.activate([newView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-                                         newView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-                                         newView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-                                         newView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)])
-        } else {
-            NSLayoutConstraint.activate([newView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                                         newView.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor),
-                                         newView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor),
-                                         newView.trailingAnchor.constraint(equalTo: view.trailingAnchor)])
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,10 +43,23 @@ class ViewControllerA: UIViewController {
         super.viewDidDisappear(animated)
         logEvent("View A Did Disappear")
     }
-    
-    func logEvent(_ message: String) {
-        if logLifecycleEvents {
-            debugPrint(message)
-        }
+}
+
+// MARK: Helper
+private extension ViewControllerA {
+
+    func configureSubviews() {
+        let newView = UILabel(frame: .zero)
+        newView.text = "A"
+        newView.textAlignment = .center
+        newView.font = UIFont.systemFont(ofSize: 100)
+        newView.translatesAutoresizingMaskIntoConstraints = false
+        newView.backgroundColor = .yellow
+
+        view.addSubview(newView)
+        NSLayoutConstraint.activate([newView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+                                     newView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                                     newView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+                                     newView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)])
     }
 }

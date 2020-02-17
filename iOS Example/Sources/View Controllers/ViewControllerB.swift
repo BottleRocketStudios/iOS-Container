@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewControllerB: UIViewController {
+class ViewControllerB: UIViewController, LifecycleLogging {
     
-    var logLifecycleEvents: Bool = true
+    var shouldLogLifecycleEvents: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +40,5 @@ class ViewControllerB: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         logEvent("View B Did Disappear")
-    }
-    
-    func logEvent(_ message: String) {
-        if logLifecycleEvents {
-            debugPrint(message)
-        }
     }
 }

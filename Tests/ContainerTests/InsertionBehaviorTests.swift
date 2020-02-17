@@ -1,8 +1,8 @@
 //
 //  InsertionBehaviorTests.swift
-//  
+//  Container
 //
-//  Created by William McGinty on 2/8/20.
+//  Copyright © 2020 Bottle Rocket Studios. All rights reserved.
 //
 
 import XCTest
