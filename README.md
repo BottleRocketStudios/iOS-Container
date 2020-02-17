@@ -64,8 +64,7 @@ func containerViewController(_ container: ContainerViewController, animationCont
 
 ## Example
 
-To run the example project, clone this repo, and open iOS Example.xcworkspace from the iOS Example directory.
-
+To run the example project, clone this repo and open `iOS Example/iOS Example.xcworkspace`.
 
 ## Requirements
 
