@@ -32,7 +32,7 @@ extension ContainerViewController.Child.Identifier {
 
 Although this is is encouraged, `ContainerViewController.Child.Identifier` conforms to `ExpressibleByStringLiteral` and `RawRepresentable` so these identifiers can be initialized from any `String` at run time.
 
-Once you have the `ContainerViewController` properly initialized and visible, it will (by default) automatically transition to its first `Child`. This behavior is controlled by the `shouldAutomaticallyTransitionOnLoad`, where, when set to `true`, the container will select the first of it's `Child` objects when it's view loads. If this value is set to false, or the `ContainerViewController` has no `Child` objects at load time, it will wait for further instruction before embedded and showing a `Child`.
+Once you have the `ContainerViewController` properly initialized and visible, it will (by default) automatically transition to its first `Child`. This behavior is controlled by the `shouldAutomaticallyTransitionOnLoad`, where, when set to `true`, the container will select the first of it's `Child` objects when it's view loads. If this value is set to false, or the `ContainerViewController` has no `Child` objects at load time, it will wait for further instruction before embedding and showing a `Child`.
 
 In order to begin showing a child view controller, there are a few options:
 
