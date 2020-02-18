@@ -10,21 +10,35 @@ import UIKit
 open class ContainerViewController: UIViewController {
     
     // MARK: Properties
+
+    /// The child manager stores and controls the children of this container. It is the main access point to modification of the embedded children.
     public let childManager = ChildManager(children: [])
+
+    /// Indicates whether the container is currently in the process of transitioning.
     open private(set) var isTransitioning: Bool = false
 
+    /// Determines if the container should automatically load and display it's first child when it's view loads, if one exists. If this value is true, the first
+    /// child in the `ChildManager` will be displayed. If false, the container will wait for further instruction.
     open var shouldAutomaticallyTransitionOnLoad: Bool = true
+
+    /// Describes the container's behavior after each transition. Defaults to `.none`.
     open var postTransitionBehavior: PostTransitionBehavior = .none
+
+    /// Describes the `ChildManager`s behavior when inserting new `Child` objects. Defaults to inserting them at the start of the collection.
     open var insertionBehavior: ChildManager.InsertionBehavior {
         get { return childManager.insertionBehavior }
         set { childManager.insertionBehavior = newValue }
     }
-    
+
+    /// The currently visible `UIViewController`.
     open var visibleViewController: UIViewController? { visibleChild?.viewController }
+
+    /// The currently visible `Child`. Setting this variable will result in the container transitioning to the given child.
     open var visibleChild: Child? {
         didSet { visibleChild.map { transition(to: $0) } }
     }
-    
+
+    /// A delegate object, conforming to `ContainerViewControllerDelegate`, which provides optional transition animators, as well as call backs when transitioning starts and ends,
     open weak var delegate: ContainerViewControllerDelegate?
     
     // MARK: Transitioning
@@ -32,6 +46,8 @@ open class ContainerViewController: UIViewController {
     open var containerTransitionCoordinator: ContainerViewControllerTransitionCoordinator?
     
     // MARK: Initializers
+
+    /// Creates a new `ContainerViewController` with the given initial set of `Child` objects and an optional delegate.
     public convenience init(children: [Child], delegate: ContainerViewControllerDelegate? = nil) {
         self.init(nibName: nil, bundle: nil)
         self.childManager.children = children
@@ -56,10 +72,19 @@ open class ContainerViewController: UIViewController {
     }
     
     // MARK: Interface
+
+    /// Transitions the container to the first existing child matching the given identifier, if one exists.
+    /// - Parameters:
+    ///   - identifier: The identifier of the `Child` to display.
+    ///   - completion: A callback executed on completion of the transition. If a `Child` with the given identifier is not found, the completion is not executed.
     open func transitionToChild(for identifier: Child.Identifier, completion: ((Bool) -> Void)? = nil) {
         childManager.existingChild(with: identifier).map { transition(to: $0, completion: completion) }
     }
-   
+
+    /// Transitions to the given `Child`. If the child is not currently stored as part of the `ChildManager`, then it is inserted before display.
+    /// - Parameters:
+    ///   - child: The `Child` to display.
+    ///   - completion: A callback executed on completion of the transition.
     open func transition(to child: Child, completion: ((Bool) -> Void)? = nil) {
         if !childManager.contains(child) {
             childManager.insert(child)
@@ -133,7 +158,8 @@ private extension ContainerViewController {
     }
     
     func configure(destination: Child, inContainer container: UIView) {
-        //It is the animator's responsibility (as with all `UIViewControllerAnimatedTransitioning` objects) to add the destinationView as a subview of the container view. The container will simply ensure the proper layout is used once the transition is completed.
+        ///It is the animator's responsibility (as with all `UIViewControllerAnimatedTransitioning` objects) to add the destinationView as a subview of the container view.
+        ///The container will simply ensure the proper layout is used once the transition is completed.
         
         container.addSubview(destination.viewController.view)
         destination.viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]

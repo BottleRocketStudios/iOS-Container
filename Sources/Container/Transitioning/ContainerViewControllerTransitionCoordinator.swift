@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// The `ContainerViewControllerTransitionCoordinator` is intended to closely mimic the `UIViewControllerTransitionCoordinator` protocol, with the exception that alongside animations must occur in the container of the transition and can not occur outside.
+/// The `ContainerViewControllerTransitionCoordinator` protocol is intended to closely mimic the `UIViewControllerTransitionCoordinator` protocol, with the exception that alongside animations must occur in the container of the transition and can not occur outside.
 public protocol ContainerViewControllerTransitionCoordinator: UIViewControllerTransitionCoordinatorContext {
     
     @discardableResult
