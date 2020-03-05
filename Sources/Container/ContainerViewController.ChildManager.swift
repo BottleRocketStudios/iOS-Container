@@ -136,13 +136,13 @@ public extension ContainerViewController {
 
         /// Returns the first existing `Child` stored by the `ChildManager`, if one exists.
         /// - Parameter identifier: The identifier of the child to search for.
-        public func existingChild(with identifier: Child.Identifier) -> Child? {
+        public func existingChild(for identifier: Child.Identifier) -> Child? {
             return existingChild(where: { $0.identifier == identifier })
         }
 
         /// Returns the first existing `Child` stored by the `ChildManager`, if one exists.
         /// - Parameter viewController: The viewController to search for. Pointer comparison is used to identify a view controller.
-        public func existingChild(with viewController: UIViewController) -> Child? {
+        public func existingChild(for viewController: UIViewController) -> Child? {
             return existingChild(where: { $0.viewController === viewController })
         }
 

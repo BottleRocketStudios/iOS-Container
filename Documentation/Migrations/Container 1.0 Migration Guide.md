@@ -63,7 +63,5 @@ A new property on `ContainerViewController` now exists to execute an action afte
 containerViewController.postTransitionBehavior = .removeAllNonVisibleChildren
 containerViewController.transitionToChild(for: .nextIdentifier)
 
-/// All the `Child` objects of `containerViewController` will have been removed from the container.
+/// All the `Child` objects of `containerViewController` (except for the one corresponding to `.nextIdentifier`) will have been removed from the container.
 ```
-
-
