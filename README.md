@@ -62,6 +62,10 @@ func containerViewController(_ container: ContainerViewController, animationCont
 }
 ``` 
 
+## Inspiration
+
+Container is an evolution of the `ContainerViewController` that was available as part of [UtiliKit](https://github.com/BottleRocketStudios/iOS-UtiliKit). For the most part, the two are source-compatible, but please check out our [migration guide](./Documentation/Migrations/Container%201.0%20Migration%20Guide.md) if you're upgrading to Container from UtiliKit.
+
 ## Example
 
 To run the example project, clone this repo and open `iOS Example/iOS Example.xcworkspace`.
