@@ -1,12 +1,12 @@
 # Container 1.0 Migration Guide
 
-This guide has been provided in order to ease the transition of existing applications using Hyperspace 1.x to the latest APIs, as well as to explain the structure of the new and changed functionality.
+This guide has been provided in order to ease the transition of existing applications using Container 1.x to the latest APIs, as well as to explain the structure of the new and changed functionality.
 
 ## Requirements
 
 - iOS 10.0, tvOS 10.0, watchOS 10.0
-- Xcode 10.0
-- Swift 5.0
+- Xcode 11.0
+- Swift 5.1
 
 ## Overview
 
