@@ -70,6 +70,11 @@ public extension ContainerViewController {
             /// This behavior inserts the new child at the front of the list of children. It does not conduct a uniqueness check.
             public static let `default` = InsertionBehavior.custom { into, new in return [new] + into }
 
+            /// This behavior inserts the new child at the front of the list of children, and then removes any previously added children with the same identifier.
+            public static let uniqued = InsertionBehavior.custom { into, new in
+                return ([new] + into).reduce([]) { $0.contains($1) ? $0 : $0 + [$1] }
+            }
+
             /// This behavior inserts the new child and then sorts the entire list of children.
             /// - Parameter sorter: The function used to sort the updated list of `Child` objects.
             public static func sorted(_ sorter: @escaping (Child, Child) -> Bool) -> InsertionBehavior {
