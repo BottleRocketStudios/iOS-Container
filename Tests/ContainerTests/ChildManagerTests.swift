@@ -25,9 +25,9 @@ final class ChildManagerTests: XCTestCase {
         let manager = ContainerViewController.ChildManager(children: [.init(identifier: "a", viewController: UIViewController()),
                                                                       .init(identifier: "b", viewController: UIViewController())])
         
-        XCTAssertNotNil(manager.existingChild(with: "a"))
-        XCTAssertNotNil(manager.existingChild(with: "b"))
-        XCTAssertNil(manager.existingChild(with: "c"))
+        XCTAssertNotNil(manager.existingChild(for: "a"))
+        XCTAssertNotNil(manager.existingChild(for: "b"))
+        XCTAssertNil(manager.existingChild(for: "c"))
     }
     
     func testChildManager_testRetrievesExistingChildWithViewController() {
@@ -36,9 +36,9 @@ final class ChildManagerTests: XCTestCase {
         let manager = ContainerViewController.ChildManager(children: [.init(identifier: "a", viewController: vcA),
                                                                       .init(identifier: "b", viewController: vcB)])
         
-        XCTAssertNotNil(manager.existingChild(with: vcA))
-        XCTAssertNotNil(manager.existingChild(with: vcB))
-        XCTAssertNil(manager.existingChild(with: UIViewController()))
+        XCTAssertNotNil(manager.existingChild(for: vcA))
+        XCTAssertNotNil(manager.existingChild(for: vcB))
+        XCTAssertNil(manager.existingChild(for: UIViewController()))
     }
     
     func testChildManager_testRetrievesExistingChildWithRespectToTraversalDirection() {

@@ -1,8 +1,8 @@
 # Container
 
-[![CI Status](http://img.shields.io/travis/bottlerocketstudios/Container.svg?style=flat)](https://travis-ci.org/bottlerocketstudios/Container)
-![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/bottlerocketstudios/Container)
-[![License](https://img.shields.io/github/license/bottlerocketstudios/Container)](LICENSE)
+[![CI Status](http://img.shields.io/travis/bottlerocketstudios/Container.svg?style=flat)](https://travis-ci.org/bottlerocketstudios/iOS-Container)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/bottlerocketstudios/iOS-Container)
+[![License](https://img.shields.io/github/license/bottlerocketstudios/iOS-Container)](LICENSE)
 
 The `ContainerViewController` is designed to be a simple but flexible method to embed and transition between multiple child `UIViewController` objects. It was built to fill in the gap when you need a `UINavigationController` without the hassle of a navigation bar, or a `UITabBarController` without the tab bar. The only built in way to transition between children of the container is through its `transition(to:)` API.
 
@@ -61,6 +61,7 @@ func containerViewController(_ container: ContainerViewController, animationCont
     return nil
 }
 ``` 
+
 
 ## Inspiration
 

@@ -78,7 +78,7 @@ open class ContainerViewController: UIViewController {
     ///   - identifier: The identifier of the `Child` to display.
     ///   - completion: A callback executed on completion of the transition. If a `Child` with the given identifier is not found, the completion is not executed.
     open func transitionToChild(for identifier: Child.Identifier, completion: ((Bool) -> Void)? = nil) {
-        childManager.existingChild(with: identifier).map { transition(to: $0, completion: completion) }
+        childManager.existingChild(for: identifier).map { transition(to: $0, completion: completion) }
     }
 
     /// Transitions to the given `Child`. If the child is not currently stored as part of the `ChildManager`, then it is inserted before display.

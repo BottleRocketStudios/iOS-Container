@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 s.name             = 'Container'
 s.version          = '1.0.0'
-s.summary          = 'A flexible way to embed and transition between UIViewControllers'
+s.summary          = 'A flexible way to embed and transition between `UIViewController`s in a container'
 
 s.description      = <<-DESC
 This framework is designed to make the process of embedding and transitioning between multiple child `UIViewController`s painless and flexible.
