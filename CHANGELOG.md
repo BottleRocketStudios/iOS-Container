@@ -1,11 +1,20 @@
-# Change Log
-All notable changes to this project will be documented in this file.
-Container adheres to [Semantic Versioning](http://semver.org/).
+## Master
 
-## [Master](https://github.com/bottlerocketstudios/Container)
+#### Enhancements
 
-### Added
+* None
 
-### Changed
+#### Bug Fixes
 
-### Removed
+* None
+
+
+## 1.0.0 (2020-08-17)
+
+#### Enhancements
+
+* Initial release
+
+#### Bug Fixes
+
+* None
