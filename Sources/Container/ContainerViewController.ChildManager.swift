@@ -96,16 +96,18 @@ public extension ContainerViewController {
 
             /// Travers the list in the backward direction, moving from the `endIndex` toward the `startIndex`.
             case preceeding
-            
-            func nextChild(in children: [Child], from: Child) -> Child? {
+
+            func nextIndex(in children: [Child], from: Child) -> Int? {
                 switch self {
                 case .following:
-                    return children.firstIndex(of: from)
-                        .flatMap { children.index($0, offsetBy: 1, limitedBy: children.endIndex - 1) }.map { children[$0] }
+                    return children.firstIndex(of: from).flatMap { children.index($0, offsetBy: 1, limitedBy: children.endIndex - 1) }
                 case .preceeding:
-                    return children.firstIndex(of: from)
-                        .flatMap { children.index($0, offsetBy: -1, limitedBy: children.startIndex) }.map { children[$0] }
+                    return children.firstIndex(of: from).flatMap { children.index($0, offsetBy: -1, limitedBy: children.startIndex) }
                 }
+            }
+            
+            func nextChild(in children: [Child], from: Child) -> Child? {
+                return nextIndex(in: children, from: from).map { children[$0] }
             }
         }
         
@@ -158,6 +160,14 @@ public extension ContainerViewController {
         ///   - child: The child at which to traverse from.
         public func existingChild(_ direction: TraversalDirection, child: Child) -> Child? {
             return direction.nextChild(in: children, from: child)
+        }
+
+        /// Returns an existing index directly adjacent to a given child, if one exists.
+        /// - Parameters:
+        ///   - direction: The direction in which to traverse the collection to find an adjacent child.
+        ///   - child: The child at which to traverse from.
+        public func indexOfExistingChild(_ direction: TraversalDirection, child: Child) -> Int? {
+            return direction.nextIndex(in: children, from: child)
         }
 
         /// Returns the first index of a given child.
