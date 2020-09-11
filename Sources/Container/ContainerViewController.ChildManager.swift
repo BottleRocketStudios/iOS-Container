@@ -154,6 +154,13 @@ public extension ContainerViewController {
             return children.first(where: predicate)
         }
 
+        /// Returns the existing `Child` at the given index, if one exists..
+        /// - Parameter index: The index used to identify a child.
+        public func existingChild(at index: Int) -> Child? {
+            guard children.indices.contains(index) else { return nil }
+            return children[index]
+        }
+
         /// Returns an existing child directly adjacent to a given child, if one exists.
         /// - Parameters:
         ///   - direction: The direction in which to traverse the collection to find an adjacent child.

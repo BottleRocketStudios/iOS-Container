@@ -30,13 +30,16 @@ open class ContainerViewController: UIViewController {
         set { childManager.insertionBehavior = newValue }
     }
 
-    /// The currently visible `UIViewController`.
-    open var visibleViewController: UIViewController? { visibleChild?.viewController }
-
     /// The currently visible `Child`. Setting this variable will result in the container transitioning to the given child.
     open var visibleChild: Child? {
         didSet { visibleChild.map { transition(to: $0) } }
     }
+
+    /// The currently visible `UIViewController`.
+    open var visibleViewController: UIViewController? { visibleChild?.viewController }
+
+    /// The index of the currently visible `Child`
+    open var indexOfVisibleChild: Int? { visibleChild.flatMap(childManager.firstIndex(of:)) }
 
     /// A delegate object, conforming to `ContainerViewControllerDelegate`, which provides optional transition animators, as well as call backs when transitioning starts and ends,
     open weak var delegate: ContainerViewControllerDelegate?
