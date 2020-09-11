@@ -43,6 +43,10 @@ public extension ContainerViewController {
             self.identifier = identifier
             self.viewController = viewController
         }
+
+        public init<T: RawRepresentable>(identifier: T, viewController: UIViewController) where T.RawValue: StringProtocol {
+            self.init(identifier: .init(identifier), viewController: viewController)
+        }
         
         // MARK: Equatable
         public static func == (lhs: Child, rhs: Child) -> Bool {
