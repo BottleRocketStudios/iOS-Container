@@ -50,6 +50,12 @@ public extension ContainerViewController {
         public func hash(into: inout Hasher) {
             into.combine(identifier)
         }
+
+        // MARK: Convenience
+
+        public static func named(for viewController: UIViewController) -> Child {
+            return Child(identifier: Child.Identifier(rawValue: String(describing: viewController)), viewController: viewController)
+        }
     }
 
     // MARK: ChildManager Subtype
