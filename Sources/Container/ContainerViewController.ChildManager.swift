@@ -23,6 +23,9 @@ public extension ContainerViewController {
             // MARK: Initializers
             public init(rawValue: String) { self.rawValue = rawValue }
             public init(stringLiteral: String) { self.rawValue = stringLiteral }
+            public init<T: RawRepresentable>(_ rawRepresentable: T) where T.RawValue: StringProtocol {
+                self.rawValue = String(rawRepresentable.rawValue)
+            }
         }
         
         // MARK: Properties
