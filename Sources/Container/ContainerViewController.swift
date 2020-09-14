@@ -14,6 +14,19 @@ open class ContainerViewController: UIViewController {
     /// The child manager stores and controls the children of this container. It is the main access point to modification of the embedded children.
     public let childManager = ChildManager(children: [])
 
+    public var managedChildren: [Child] {
+        get { childManager.children }
+        set {
+            let previousChildren = childManager.children
+            childManager.children = newValue
+
+            previousChildren.forEach {
+                $0.viewController.removeFromParent()
+                $0.viewController.view.removeFromSuperview()
+            }
+        }
+    }
+
     /// Indicates whether the container is currently in the process of transitioning.
     open private(set) var isTransitioning: Bool = false
 
