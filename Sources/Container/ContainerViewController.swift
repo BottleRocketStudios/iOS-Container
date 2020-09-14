@@ -97,6 +97,10 @@ open class ContainerViewController: UIViewController {
         childManager.existingChild(for: identifier).map { transition(to: $0, completion: completion) }
     }
 
+    public func transitionToChild<T: Hashable>(for hashable: T, completion: ((Bool) -> Void)? = nil) {
+        transitionToChild(for: .init(hashable), completion: completion)
+    }
+
     /// Transitions to the given `Child`. If the child is not currently stored as part of the `ChildManager`, then it is inserted before display.
     /// - Parameters:
     ///   - child: The `Child` to display.
