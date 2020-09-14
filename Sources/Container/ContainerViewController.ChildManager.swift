@@ -17,8 +17,8 @@ public extension ContainerViewController {
         // MARK: Subtypes
 
         /// The identifier for a `Child` stored by the `ContainerVewController`. This type is used for the storage of these `Child` objects, and is only source for equality between `Child` objects.
-        public struct Identifier: RawRepresentable, ExpressibleByStringLiteral, Hashable {
-            public let rawValue: String
+        public struct Identifier: ExpressibleByStringLiteral, Hashable {
+            public let rawValue: AnyHashable
             
             // MARK: Initializers
             public init(rawValue: String) { self.rawValue = rawValue }

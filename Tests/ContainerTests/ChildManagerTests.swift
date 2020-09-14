@@ -65,7 +65,7 @@ final class ChildManagerTests: XCTestCase {
         let childB = ContainerViewController.Child(identifier: "abc", viewController: UIViewController())
         let manager = ContainerViewController.ChildManager(children: [childA, childB])
         
-        let indexMatching = manager.firstIndex{ $0.identifier.rawValue.count == 3 }
+        let indexMatching = manager.firstIndex{ ($0.identifier.rawValue as? String)?.count == 3 }
         XCTAssertEqual(indexMatching, 1)
     }
     

@@ -37,7 +37,8 @@ final class InsertionBehaviorTests: XCTestCase {
     
     func testInsertionBehavior_testSortedInsertionBehavior() {
         let behavior = ContainerViewController.ChildManager.InsertionBehavior.sorted { lhs, rhs in
-            return lhs.identifier.rawValue < rhs.identifier.rawValue
+            guard let lString = lhs.identifier.rawValue as? String, let rString = rhs.identifier.rawValue as? String else { return true }
+            return lString < rString
         }
         
         let children: [ContainerViewController.Child] = [.init(identifier: "b", viewController: UIViewController())]
