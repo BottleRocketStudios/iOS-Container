@@ -24,10 +24,6 @@ public extension ContainerViewController {
             public init(rawValue: String) { self.rawValue = rawValue }
             public init(stringLiteral: String) { self.rawValue = stringLiteral }
 
-            public init<T: RawRepresentable>(_ rawRepresentable: T) where T.RawValue: Hashable {
-                self.rawValue = rawRepresentable.rawValue
-            }
-
             public init<T: Hashable>(_ hashable: T) {
                 self.rawValue = hashable
             }
@@ -49,7 +45,7 @@ public extension ContainerViewController {
             self.viewController = viewController
         }
 
-        public init<T: RawRepresentable>(identifier: T, viewController: UIViewController) where T.RawValue: StringProtocol {
+        public init<T: Hashable>(identifier: T, viewController: UIViewController) {
             self.init(identifier: .init(identifier), viewController: viewController)
         }
         

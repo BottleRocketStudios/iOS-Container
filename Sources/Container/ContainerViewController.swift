@@ -39,7 +39,7 @@ open class ContainerViewController: UIViewController {
 
     /// Describes the `ChildManager`s behavior when inserting new `Child` objects. Defaults to inserting them at the start of the collection.
     open var insertionBehavior: ChildManager.InsertionBehavior {
-        get { return childManager.insertionBehavior }
+        get { childManager.insertionBehavior }
         set { childManager.insertionBehavior = newValue }
     }
 
