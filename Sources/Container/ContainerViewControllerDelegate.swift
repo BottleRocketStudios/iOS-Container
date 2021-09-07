@@ -7,7 +7,7 @@
 
 import UIKit
 
-public protocol ContainerViewControllerDelegate: class {
+public protocol ContainerViewControllerDelegate: AnyObject {
 
     /// Asks your delegate for the transition animator object to use when transitioning between two child view controllers.
     /// - Parameters:
