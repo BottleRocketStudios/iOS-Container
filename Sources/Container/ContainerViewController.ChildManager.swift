@@ -77,7 +77,7 @@ public extension ContainerViewController {
 
             /// This behavior inserts the new child and then sorts the entire list of children.
             /// - Parameter sorter: The function used to sort the updated list of `Child` objects.
-            public static func sorted(_ sorter: @escaping (Child, Child) -> Bool) -> InsertionBehavior {
+            public static func sorted(_ sorter: @escaping (Child, Child) -> Bool) -> Self {
                 return .custom { into, new in (into + [new]).sorted(by: sorter) }
             }
             
@@ -193,6 +193,22 @@ public extension ContainerViewController {
         /// - Parameter predicate: The predicate to match in order to remove managed `Child` objects.
         public func removeAll(where predicate: @escaping (Child) -> Bool) {
             children.removeAll(where: predicate)
+        }
+    }
+}
+
+// MARK: - ContainerViewController.ChildManager.InsertionBehavior + Convenience
+public protocol ContainerChildInitializable {
+    init?(_ child: ContainerViewController.Child)
+}
+
+public extension ContainerViewController.ChildManager.InsertionBehavior {
+
+    static func sorted<T: ContainerChildInitializable & Comparable>(byTransformingInto type: T.Type) -> Self {
+        return sorted {
+            guard let lhs = T($0) else { return false }
+            guard let rhs = T($1) else { return true }
+            return lhs < rhs
         }
     }
 }
