@@ -204,6 +204,8 @@ public protocol ContainerChildInitializable {
 
 public extension ContainerViewController.ChildManager.InsertionBehavior {
 
+    /// This behavior inserts the new child and then sorts the entire list of children using the `Comparable` conformance of the specified type.
+    /// - Parameter type: The type who's `Comparable` conformance will be used to sort the new list of children
     static func sorted<T: ContainerChildInitializable & Comparable>(byTransformingInto type: T.Type) -> Self {
         return sorted {
             guard let lhs = T($0) else { return false }
