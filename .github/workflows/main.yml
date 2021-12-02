@@ -8,7 +8,6 @@ on:
 jobs:
   Build:
     runs-on: macos-11
-    env:
     strategy:
       fail-fast: false
       matrix:
