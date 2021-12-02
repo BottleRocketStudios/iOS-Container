@@ -9,7 +9,6 @@ jobs:
   Build:
     runs-on: macos-11
     env:
-      workspace: "Container.xcworkspace"
     strategy:
       fail-fast: false
       matrix:
