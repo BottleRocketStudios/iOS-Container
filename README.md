@@ -1,6 +1,6 @@
 # Container
 
-[![CI Status](http://img.shields.io/travis/bottlerocketstudios/Container.svg?style=flat)](https://travis-ci.org/bottlerocketstudios/iOS-Container)
+![CI Status](https://github.com/BottleRocketStudios/iOS-Container/actions/workflows/main.yml/badge.svg)
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/bottlerocketstudios/iOS-Container)
 [![License](https://img.shields.io/github/license/bottlerocketstudios/iOS-Container)](LICENSE)
 
@@ -9,7 +9,7 @@ The `ContainerViewController` is designed to be a simple but flexible method to 
 To get started quickly, it is easiest to create the `ContainerViewController` from code and manually add it as a child of a parent `UIViewController`. This is easily done in that view controller's `viewDidLoad` function:
 
 ``` swift
-private lazy var containerViewController: ContainerViewController = ContainerViewController(children: [.init(identifier: .a, viewController: controllerA), 
+private lazy var containerViewController: ContainerViewController = ContainerViewController(children: [.init(identifier: .a, viewController: controllerA),
                                                                                                        .init(identifier: .b, viewController: controllerB)], delegate: self)
 
 containerViewController.willMove(toParent: self)
@@ -60,7 +60,7 @@ func containerViewController(_ container: ContainerViewController, animationCont
 
     return nil
 }
-``` 
+```
 
 
 ## Inspiration
