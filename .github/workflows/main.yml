@@ -1,0 +1,50 @@
+name: Main
+
+on:
+  push:
+    branches: [ main, release/*]
+  pull_request:
+
+jobs:
+  Build:
+    runs-on: macos-11
+    strategy:
+      fail-fast: false
+      matrix:
+        name: ["iOS", "tvOS"]
+        include:
+            - name: "iOS"
+              scheme: "Container"
+              destination: "platform=iOS Simulator,OS=15.0,name=iPhone 12 Pro"
+              test: true
+              lint: true
+
+            - name: "tvOS"
+              scheme: "Container"
+              destination: "platform=tvOS Simulator,OS=15.0,name=Apple TV 4K"
+              test: true
+              lint: true
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build and Test
+      run: >
+        if [[ ${{ matrix.test }} == true ]]; then
+          xcodebuild test \
+            -scheme "${{ matrix.scheme }}" \
+            -destination "${{ matrix.destination }}" \
+            ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES || exit 1
+        else
+          xcodebuild \
+            -scheme "${{ matrix.scheme }}" \
+            -destination "${{ matrix.destination }}" \
+            ONLY_ACTIVE_ARCH=NO || exit 1
+        fi
+
+    - name: Lint
+      run: >
+        if [[ ${{ matrix.lint }} == true ]]; then
+          pod lib lint
+        fi
