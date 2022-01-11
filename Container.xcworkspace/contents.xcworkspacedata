@@ -4,6 +4,12 @@
    <FileRef
       location = "group:../iOS-DebugKit/README.md">
    </FileRef>
+   <FileRef
+      location = "group:CHANGELOG.md">
+   </FileRef>
+   <FileRef
+      location = "group:Container.podspec">
+   </FileRef>
    <Group
       location = "group:Documentation"
       name = "Documentation">
