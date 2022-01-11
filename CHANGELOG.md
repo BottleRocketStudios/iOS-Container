@@ -9,6 +9,18 @@
 * None
 
 
+## 1.0.2 (2021-02-11)
+
+#### Enhancements
+
+* Add a more convenient method to manage a pre-defined set of sorted children
+[Will McGinty](https://github.com/wmcginty)
+[#9](https://github.com/BottleRocketStudios/iOS-Container/pull/9)
+
+#### Bug Fixes
+
+* None
+
 ## 1.0.1 (2021-09-08)
 
 #### Enhancements
