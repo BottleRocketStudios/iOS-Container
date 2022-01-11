@@ -22,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E80C178278E34F7008F9FA9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EA172FE23FB5E2C000CA22F /* LifecycleLogging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifecycleLogging.swift; sourceTree = "<group>"; };
 		B4E0251B23F4E7BF005AF9FE /* InteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveTransition.swift; sourceTree = "<group>"; };
 		B4E0251C23F4E7BF005AF9FE /* ViewControllerB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerB.swift; sourceTree = "<group>"; };
@@ -34,7 +35,6 @@
 		D9A1277C235699C600D136A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9A1277E235699C700D136A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9A12781235699C700D136A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D9A12783235699C700D136A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +90,7 @@
 		D9A12769235699C600D136A5 = {
 			isa = PBXGroup;
 			children = (
+				0E80C178278E34F7008F9FA9 /* Info.plist */,
 				D9A12774235699C600D136A5 /* Sources */,
 				D9A12773235699C600D136A5 /* Products */,
 				D9A127892356A25E00D136A5 /* Frameworks */,
@@ -112,7 +113,6 @@
 				B4E0252823F4E815005AF9FE /* Transitioning */,
 				B4E0252923F4E821005AF9FE /* Storyboards */,
 				D9A1277E235699C700D136A5 /* Assets.xcassets */,
-				D9A12783235699C700D136A5 /* Info.plist */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -352,6 +352,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -369,6 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
