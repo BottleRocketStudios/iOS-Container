@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../iOS-DebugKit/README.md">
+      location = "group:README.md">
    </FileRef>
    <FileRef
       location = "group:CHANGELOG.md">
