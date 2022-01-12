@@ -1,6 +1,6 @@
 //
 //  ChildManagerTests.swift
-//  Container
+//  Tests
 //
 //  Copyright © 2020 Bottle Rocket Studios. All rights reserved.
 //
