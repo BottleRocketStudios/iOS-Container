@@ -1,6 +1,6 @@
 //
 //  WipeTransitionAnimator.swift
-//  iOS Example
+//  Example
 //
 //  Copyright © 2020 Bottle Rocket Studios. All rights reserved.
 //

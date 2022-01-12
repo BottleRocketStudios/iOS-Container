@@ -1,8 +1,7 @@
 //
 //  AppDelegate.swift
-//  iOS Example
+//  Example
 //
-//  Created by Will McGinty on Feb 12, 2020.
 //  Copyright © 2020 Bottle Rocket Studios. All rights reserved.
 //
 
