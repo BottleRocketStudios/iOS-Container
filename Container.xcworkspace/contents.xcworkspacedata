@@ -2,33 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:README.md">
+      location = "group:Container.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:CHANGELOG.md">
-   </FileRef>
-   <FileRef
-      location = "group:Container.podspec">
-   </FileRef>
-   <Group
-      location = "group:Documentation"
-      name = "Documentation">
-      <Group
-         location = "group:Migrations"
-         name = "Migrations">
-         <FileRef
-            location = "group:Container 1.0 Migration Guide.md">
-         </FileRef>
-      </Group>
-   </Group>
-   <Group
-      location = "group:Examples"
-      name = "Examples">
-      <FileRef
-         location = "group:Example.xcodeproj">
-      </FileRef>
-   </Group>
-   <FileRef
-      location = "group:Container">
+      location = "group:Example/Example.xcodeproj">
    </FileRef>
 </Workspace>

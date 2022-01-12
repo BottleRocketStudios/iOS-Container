@@ -19,7 +19,7 @@ s.homepage          = 'https://github.com/BottleRocketStudios/iOS-Container'
 s.license           = { :type => 'Apache 2.0', :file => 'LICENSE' }
 s.author            = { 'Bottle Rocket Studios' => 'will.mcginty@bottlerocketstudios.com' }
 s.source            = { :git => 'https://github.com/bottlerocketstudios/iOS-Container.git', :tag => s.version.to_s }
-s.source_files      = 'Container/Sources/Container/**/*'
+s.source_files      = 'Sources/**/*'
 s.ios.deployment_target = '10.0'
 s.tvos.deployment_target = '10.0'
 s.swift_version = '5.4'

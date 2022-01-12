@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Container"
-               BuildableName = "Container"
-               BlueprintName = "Container"
-               ReferencedContainer = "container:">
+               BlueprintIdentifier = "0E3F8E3A278F658F00C9E69A"
+               BuildableName = "Container.framework"
+               BlueprintName = "Container iOS"
+               ReferencedContainer = "container:Container.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ContainerTests"
-               BuildableName = "ContainerTests"
-               BlueprintName = "ContainerTests"
-               ReferencedContainer = "container:">
+               BlueprintIdentifier = "0E3F8E41278F659000C9E69A"
+               BuildableName = "Container iOS Tests.xctest"
+               BlueprintName = "Container iOS Tests"
+               ReferencedContainer = "container:Container.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -60,10 +60,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Container"
-            BuildableName = "Container"
-            BlueprintName = "Container"
-            ReferencedContainer = "container:">
+            BlueprintIdentifier = "0E3F8E3A278F658F00C9E69A"
+            BuildableName = "Container.framework"
+            BlueprintName = "Container iOS"
+            ReferencedContainer = "container:Container.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
