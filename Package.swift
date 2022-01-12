@@ -11,8 +11,8 @@ let package = Package(
     dependencies: [],
     targets: [
         .target(name: "Container",
-                path: "Sources",
-                dependencies: []),
+                dependencies: []
+                path: "Sources"),
         .testTarget(name: "ContainerTests",
                     dependencies: ["Container"]),
     ]
