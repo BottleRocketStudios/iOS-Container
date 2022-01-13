@@ -22,6 +22,6 @@ s.source            = { :git => 'https://github.com/bottlerocketstudios/iOS-Cont
 s.source_files      = 'Sources/**/*'
 s.ios.deployment_target = '10.0'
 s.tvos.deployment_target = '10.0'
-s.swift_version = '5.4'
+s.swift_version = '5.5'
 
 end
