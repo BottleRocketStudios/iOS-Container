@@ -57,10 +57,10 @@ jobs:
 
     - name: Lint
       run: >
-        if [[ ${{ env.cocoapods }} == true ]]; then
-          pod lib lint
+        if [[ ${{ env.spm }} == true ]]; then
+          swift package describe
         fi
 
-        if [[ ${{ env.spm }} == true ]]; then
-          swift package description
+        if [[ ${{ env.cocoapods }} == true ]]; then
+          pod lib lint
         fi
