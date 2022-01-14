@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'Container'
-s.version          = '1.0.1'
+s.version          = '1.0.2'
 s.summary          = 'A flexible way to embed and transition between `UIViewController`s in a container'
 
 s.description      = <<-DESC
@@ -21,6 +21,7 @@ s.author            = { 'Bottle Rocket Studios' => 'will.mcginty@bottlerocketstu
 s.source            = { :git => 'https://github.com/bottlerocketstudios/iOS-Container.git', :tag => s.version.to_s }
 s.source_files      = 'Sources/Container/**/*'
 s.ios.deployment_target = '10.0'
+s.tvos.deployment_target = '10.0'
 s.swift_version = '5.4'
 
 end
